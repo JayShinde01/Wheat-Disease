@@ -8,19 +8,30 @@ function OAuthSuccess() {
 
   useEffect(() => {
     const token = searchParams.get("token");
+    const email = searchParams.get("email");
+    const name = searchParams.get("name");
 
     if (!token) {
       message.error("Google Login Failed");
-      navigate("/login");
+      navigate("/login", { replace: true });
       return;
     }
 
+    // Store authentication details
     localStorage.setItem("token", token);
+
+    if (email) {
+      localStorage.setItem("email", email);
+    }
+
+    if (name) {
+      localStorage.setItem("name", name);
+    }
 
     message.success("Login Successful");
 
-    navigate("/home");
-  }, []);
+    navigate("/home", { replace: true });
+  }, [navigate, searchParams]);
 
   return (
     <div
