@@ -70,7 +70,7 @@ export function logout() {
 export async function preflight() {
 
   try {
-    await axios.get(`${BASE_URL}/`);
+    await axios.get(`${BASE_URL}/api/auth/`);
     console.log("Backend awake");
   } catch(error) {
     console.log("Backend wake failed");
