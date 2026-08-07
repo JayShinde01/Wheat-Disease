@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { predictDisease } from "../service/detectionService";
+import React, { useEffect, useState } from "react";
+import { predictDisease,    getDetectionByUserId } from "../service/detectionService";
 
 import {
   Card,
@@ -33,32 +33,23 @@ function Detection() {
   const [preview, setPreview] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [history, setHistory] = useState([]);
+  useEffect(() => {
+    loadHistory();
+}, []);
 
+const loadHistory = async () => {
+    try {
+        const data = await getDetectionByUserId();
+        setHistory(data);
+    } catch (err) {
+        console.error(err);
+        message.error("Failed to load history");
+    }
+};
   // Dummy history
-  const history = [
-    {
-      id: 1,
-      image: "https://placehold.co/100x100",
-      disease: "Leaf Rust",
-      confidence: 96.25,
-      date: "Today",
-    },
-    {
-      id: 2,
-      image: "https://placehold.co/100x100",
-      disease: "Healthy",
-      confidence: 99.12,
-      date: "Yesterday",
-    },
-    {
-      id: 3,
-      image: "https://placehold.co/100x100",
-      disease: "Powdery Mildew",
-      confidence: 93.84,
-      date: "05 Aug 2026",
-    },
-  ];
 
+    
   const handleImageChange = (e) => {
     const file = e.target.files[0];
 

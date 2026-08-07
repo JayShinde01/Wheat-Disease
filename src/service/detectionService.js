@@ -39,3 +39,12 @@ export async function predictDisease(imageFile) {
         throw error;
     }
 }
+
+export async function getDetectionByUserId() {
+
+    const res = await api.get(`/api/disease/byuser/${localStorage.getItem("email")}`);
+
+    console.log(res.data);
+
+    return res.data;
+}
