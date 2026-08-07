@@ -18,12 +18,13 @@ import {
 
 import { GoogleLogin } from "@react-oauth/google";
 import { googleLogin, login } from "../service/authService";
+import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
 
 function LoginPage() {
   const [loading, setLoading] = useState(false);
-
+const navigate = useNavigate();
   const handleSubmit = async (values) => {
     try {
       setLoading(true);
@@ -33,6 +34,8 @@ function LoginPage() {
       console.log(response);
 
       message.success("Login successful");
+      navigate("/")
+      
     } catch (error) {
       console.error(error);
 

@@ -63,5 +63,5 @@ export function logout() {
   localStorage.removeItem("email");
   localStorage.removeItem("name");
 
-  window.location.href = "/login";
+  window.location.href = "/";
 }
