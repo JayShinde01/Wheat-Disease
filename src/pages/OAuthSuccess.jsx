@@ -9,7 +9,7 @@ function OAuthSuccess() {
   useEffect(() => {
     const token = searchParams.get("token");
     const email = searchParams.get("email");
-    const name = searchParams.get("name");
+    
 
     if (!token) {
       message.error("Google Login Failed");
@@ -24,9 +24,7 @@ function OAuthSuccess() {
       localStorage.setItem("email", email);
     }
 
-    if (name) {
-      localStorage.setItem("name", name);
-    }
+   
 
     message.success("Login Successful");
 

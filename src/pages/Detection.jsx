@@ -259,7 +259,7 @@ const loadHistory = async () => {
               <List.Item.Meta
                 avatar={
                   <Image
-                    src={item.image}
+                    src={item.imageUrl}
                     width={70}
                     height={70}
                     style={{
@@ -268,7 +268,7 @@ const loadHistory = async () => {
                   />
                 }
                 title={item.disease}
-                description={item.date}
+                description={item.detectedAt}
               />
 
               <Tag color="green">
