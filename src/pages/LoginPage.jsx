@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Form,
   Input,
@@ -17,7 +17,7 @@ import {
 } from "@ant-design/icons";
 
 import { GoogleLogin } from "@react-oauth/google";
-import { googleLogin, login } from "../service/authService";
+import { googleLogin, login, preflight } from "../service/authService";
 import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
@@ -25,6 +25,9 @@ const { Title, Text } = Typography;
 function LoginPage() {
   const [loading, setLoading] = useState(false);
 const navigate = useNavigate();
+useEffect(()=>{
+  preflight();
+},[]);
   const handleSubmit = async (values) => {
     try {
       setLoading(true);

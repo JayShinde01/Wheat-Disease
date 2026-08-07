@@ -1,3 +1,4 @@
+import axios from "axios";
 import api from "../constant/api";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -64,4 +65,23 @@ export function logout() {
   localStorage.removeItem("name");
 
   window.location.href = "/";
+}
+
+export async function preflight() {
+
+  try {
+    await axios.get(`${BASE_URL}/`);
+    console.log("Backend awake");
+  } catch(error) {
+    console.log("Backend wake failed");
+  }
+
+
+  try {
+    await axios.get(`${import.meta.env.VITE_ML_BASE_URL}/`);
+    console.log("ML service awake");
+  } catch(error) {
+    console.log("ML service wake failed");
+  }
+
 }
