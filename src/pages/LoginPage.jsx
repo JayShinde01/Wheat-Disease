@@ -37,7 +37,7 @@ useEffect(()=>{
       console.log(response);
 
       message.success("Login successful");
-      navigate("/")
+      navigate("/home")
       
     } catch (error) {
       console.error(error);

@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+import api from "../constant/api";
 
 
 export async function predictDisease(imageFile) {
@@ -15,8 +13,8 @@ export async function predictDisease(imageFile) {
 
     try {
 
-        const response = await axios.post(
-            `${BASE_URL}/api/disease/predict`,
+        const response = await api.post(
+            "/api/disease/predict",
             formData,
             {
                 headers:{
@@ -25,7 +23,8 @@ export async function predictDisease(imageFile) {
             }
         );
 
-console.log(response.data);
+
+        console.log(response.data);
 
         return response.data;
 
