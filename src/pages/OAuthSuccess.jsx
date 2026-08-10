@@ -9,7 +9,6 @@ function OAuthSuccess() {
   useEffect(() => {
     const token = searchParams.get("token");
     const email = searchParams.get("email");
-    
 
     if (!token) {
       message.error("Google Login Failed");
@@ -24,10 +23,7 @@ function OAuthSuccess() {
       localStorage.setItem("email", email);
     }
 
-   
-
     message.success("Login Successful");
-
     navigate("/home", { replace: true });
   }, [navigate, searchParams]);
 
@@ -37,9 +33,16 @@ function OAuthSuccess() {
         height: "100vh",
         display: "grid",
         placeItems: "center",
+        background: "var(--bg-primary)",
+        color: "var(--text-main)",
       }}
     >
-      <Spin size="large" tip="Signing you in..." />
+      <div style={{ textAlign: "center" }}>
+        <Spin size="large" />
+        <p style={{ marginTop: 16, fontWeight: 500, color: "var(--text-muted)" }}>
+          Signing you in...
+        </p>
+      </div>
     </div>
   );
 }

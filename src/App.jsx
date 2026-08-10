@@ -17,35 +17,42 @@ import Info from "./pages/Info";
 import ProtectedRoute from "./component/ProtectedRoute";
 import MainLayout from "./layout/MainLayout";
 
+import { ThemeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./i18n/LanguageContext";
+
 function App() {
   return (
-    <Router>
-      <Routes>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Router>
+          <Routes>
 
-        {/* Public Routes */}
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/oauth-success" element={<OAuthSuccess />} />
+            {/* Public Routes */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/oauth-success" element={<OAuthSuccess />} />
 
-        {/* Protected Routes */}
-        <Route
-          element={
-            <ProtectedRoute>
-              <MainLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/detection" element={<Detection />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/info" element={<Info />} />
-        </Route>
+            {/* Protected Routes */}
+            <Route
+              element={
+                <ProtectedRoute>
+                  <MainLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/detection" element={<Detection />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/info" element={<Info />} />
+            </Route>
 
-        {/* Default */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+            {/* Default */}
+            <Route path="*" element={<Navigate to="/login" replace />} />
 
-      </Routes>
-    </Router>
+          </Routes>
+        </Router>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 
