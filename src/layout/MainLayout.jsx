@@ -20,6 +20,7 @@ import {
 
 import { Outlet, useNavigate } from "react-router-dom";
 import { logout } from "../service/authService";
+import JotformChatbot from "../component/JotformChatbot";
 
 
 const { Header, Content } = Layout;
@@ -134,9 +135,9 @@ function MainLayout() {
       >
 
         <Outlet/>
-
+       
       </Content>
-
+ <JotformChatbot />
 
 
       {/* BOTTOM NAVIGATION */}

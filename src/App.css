@@ -1,0 +1,14 @@
+/* =========================================
+   JOTFORM CHATBOT
+   Move chatbot slightly above bottom nav
+========================================= */
+
+#jotform-chatbot {
+    bottom: 95px !important;
+}
+
+/* Common Jotform floating launcher selectors */
+iframe[src*="jotfor.ms"],
+iframe[src*="jotform"] {
+    bottom: 95px !important;
+}

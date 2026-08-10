@@ -1,0 +1,344 @@
+.info-page {
+    min-height: 100vh;
+    background: #f7f9f5;
+    padding: 35px 20px;
+    color: #243326;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.info-header {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+}
+
+.info-label {
+    color: #4d7c3f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.info-header h1 {
+    margin: 8px 0;
+
+    font-size: 34px;
+}
+
+.info-header p {
+    max-width: 650px;
+
+    color: #6d766d;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* ================================
+   DISEASE GRID
+================================ */
+
+.disease-grid {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.disease-card {
+    border: 1px solid #e0e6dd;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.disease-card:hover {
+    border-color: #8aad7c;
+}
+
+.disease-card.active {
+    border-color: #4d7c3f;
+
+    background: #f0f6ec;
+}
+
+.disease-icon {
+    width: 42px;
+    height: 42px;
+
+    background: #f1f4ee;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.disease-card-content {
+    min-width: 0;
+}
+
+.disease-card h3 {
+    margin: 0 0 6px;
+
+    font-size: 15px;
+}
+
+.severity {
+    font-size: 10px;
+
+    padding: 3px 7px;
+
+    border-radius: 20px;
+}
+
+.severity.high {
+    background: #ffe4e2;
+    color: #b73d37;
+}
+
+.severity.medium {
+    background: #fff0d5;
+    color: #9a6817;
+}
+
+
+/* ================================
+   DETAILS
+================================ */
+
+.disease-details {
+    max-width: 1000px;
+
+    margin: auto;
+
+    background: white;
+
+    border: 1px solid #e1e6df;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+.details-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.large-disease-icon {
+    width: 55px;
+    height: 55px;
+
+    background: #eaf2e5;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.details-title span {
+    color: #7a8479;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.details-title h2 {
+    margin: 4px 0 0;
+
+    font-size: 25px;
+}
+
+
+/* ================================
+   INFO BOXES
+================================ */
+
+.details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.info-box {
+    background: #f7f9f5;
+
+    border-radius: 11px;
+
+    padding: 17px;
+}
+
+.info-box-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.info-box-title span {
+    font-size: 18px;
+}
+
+.info-box-title h3 {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+.info-box p {
+    color: #626b62;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 10px 0 0;
+}
+
+
+/* ================================
+   AI SECTION
+================================ */
+
+.ai-info {
+    max-width: 1000px;
+
+    margin: 20px auto 0;
+
+    background: #eaf3e5;
+
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.ai-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    background: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.ai-info h3 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+}
+
+.ai-info p {
+    margin: 0;
+
+    color: #63705f;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 750px) {
+
+    .disease-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .info-page {
+        padding: 25px 12px;
+    }
+
+    .info-header h1 {
+        font-size: 28px;
+    }
+
+    .disease-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .disease-details {
+        padding: 18px;
+    }
+
+    .ai-info {
+        align-items: flex-start;
+    }
+
+}
