@@ -1,6 +1,6 @@
 export const hi = {
   // Common Navigation & App
-  appName: "किसान रक्षक",
+  appName: "व्हीट केयर",
   appSubtitle: "एआई किसान सहायक",
   nav: {
     home: "होम",
@@ -14,7 +14,7 @@ export const hi = {
   
   // Home Page
   home: {
-    badge: "किसान रक्षक एआई",
+    badge: "व्हीट केयर एआई",
     welcome: "स्वागत है",
     welcomeSubtitle: "अपनी गेहूं की फसल को स्वस्थ रखें और किसान समुदाय से जुड़े रहें।",
     weather: {
@@ -128,7 +128,7 @@ export const hi = {
   auth: {
     loginTitle: "पुनः स्वागत है 👋",
     loginSubtitle: "अपने किसान खाते में लॉगिन करें",
-    registerTitle: "किसान रक्षक से जुड़ें 🌾",
+    registerTitle: "व्हीट केयर से जुड़ें 🌾",
     registerSubtitle: "आज ही अपना नया खाता बनाएं",
     emailLabel: "ईमेल पता",
     emailPlaceholder: "name@example.com",
@@ -143,6 +143,7 @@ export const hi = {
     haveAccount: "पहले से खाता है?",
     signUp: "पंजीकरण करें",
     signIn: "लॉगिन करें",
+    invalidCredentials: "अमान्य ईमेल या पासवर्ड",
   },
 
   // General & Errors

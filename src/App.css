@@ -1,14 +1,37 @@
 /* =========================================
    JOTFORM CHATBOT
-   Move chatbot slightly above bottom nav
-========================================= */
+   Keep chatbot above the fixed bottom navigation
+   ========================================= */
 
 #jotform-chatbot {
-    bottom: 95px !important;
+  position: fixed !important;
+  left: 20px !important;
+  bottom: 95px !important;
+  z-index: 9999 !important;
 }
 
-/* Common Jotform floating launcher selectors */
+/* Jotform floating chatbot iframe */
 iframe[src*="jotfor.ms"],
 iframe[src*="jotform"] {
-    bottom: 95px !important;
+  position: fixed !important;
+  left: 20px !important;
+  bottom: 95px !important;
+  z-index: 9999 !important;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  #jotform-chatbot {
+    left: 15px !important;
+    bottom: 85px !important;
+  }
+
+  iframe[src*="jotfor.ms"],
+  iframe[src*="jotform"] {
+    left: 15px !important;
+    bottom: 85px !important;
+  }
 }

@@ -1,6 +1,6 @@
 export const en = {
   // Common Navigation & App
-  appName: "Kissan Rakshak",
+  appName: "Wheat Care",
   appSubtitle: "AI Farmer Assistant",
   nav: {
     home: "Home",
@@ -14,7 +14,7 @@ export const en = {
   
   // Home Page
   home: {
-    badge: "KISSAN RAKSHAK AI",
+    badge: "WHEAT CARE AI",
     welcome: "Welcome back",
     welcomeSubtitle: "Keep your crops healthy and stay connected with your farming community.",
     weather: {
@@ -128,7 +128,7 @@ export const en = {
   auth: {
     loginTitle: "Welcome Back 👋",
     loginSubtitle: "Sign in to access your wheat disease assistant",
-    registerTitle: "Join Kissan Rakshak 🌾",
+    registerTitle: "Join Wheat Care 🌾",
     registerSubtitle: "Register your farmer account today",
     emailLabel: "Email Address",
     emailPlaceholder: "name@example.com",
@@ -143,6 +143,7 @@ export const en = {
     haveAccount: "Already have an account?",
     signUp: "Register",
     signIn: "Login",
+    invalidCredentials: "Invalid email or password",
   },
 
   // General & Errors

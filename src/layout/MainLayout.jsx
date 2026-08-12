@@ -270,7 +270,7 @@ function MainLayout() {
         <Outlet />
       </Content>
 
-      <JotformChatbot />
+      {/* <JotformChatbot /> */}
 
       {/* FIXED BOTTOM NAVIGATION FOR MOBILE & DESKTOP QUICK ACCESS */}
       <nav

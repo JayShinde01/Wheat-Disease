@@ -19,6 +19,8 @@ import MainLayout from "./layout/MainLayout";
 
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./i18n/LanguageContext";
+import JotformChatbot from "./component/JotformChatbot";
+
 
 function App() {
   return (
@@ -36,7 +38,10 @@ function App() {
             <Route
               element={
                 <ProtectedRoute>
-                  <MainLayout />
+                     <>
+        <MainLayout />
+        <JotformChatbot />
+      </>
                 </ProtectedRoute>
               }
             >
