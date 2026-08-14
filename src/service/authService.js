@@ -17,7 +17,7 @@ export function googleLogin() {
  */
 export async function register(user) {
   try {
-    const { data } = await api.post(`${BASE_URL}/api/auth/register`, user);
+    const { data } = await axios.post(`${BASE_URL}/api/auth/register`, user);
 
     return data;
   } catch (error) {
