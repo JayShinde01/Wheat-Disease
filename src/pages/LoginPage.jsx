@@ -18,7 +18,7 @@ import {
 } from "@ant-design/icons";
 
 import { googleLogin, login, preflight } from "../service/authService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ThemeToggle from "../component/ThemeToggle";
 import LanguageSelector from "../component/LanguageSelector";
 import { useTranslation } from "../i18n/LanguageContext";
@@ -311,6 +311,10 @@ function LoginPage() {
             >
               {t("auth.signUp")}
             </Button>
+            <br />
+           <Link to="/forgot-password">
+    Forgot Password?
+</Link>
           </div>
         </Space>
       </Card>
