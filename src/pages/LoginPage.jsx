@@ -114,7 +114,7 @@ function LoginPage() {
         }}
       >
         <Space
-          direction="vertical"
+          orientation="vertical"
           style={{
             width: "100%",
           }}

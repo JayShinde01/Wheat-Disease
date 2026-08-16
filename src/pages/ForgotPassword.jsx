@@ -16,7 +16,8 @@ import {
 } from "@ant-design/icons";
 
 import api from "../constant/api";
-
+import axios from "axios";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 const { Title, Text } = Typography;
 
 function ForgotPassword() {
@@ -36,8 +37,8 @@ function ForgotPassword() {
             setMessage("");
             setSuccess(false);
 
-            const response = await api.post(
-                "/api/auth/forgot-password",
+            const response = await axios.post(
+                `${BASE_URL}/api/auth/forgot-password`,
                 {
                     email
                 }
