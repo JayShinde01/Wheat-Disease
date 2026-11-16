@@ -85,3 +85,16 @@ export async function preflight() {
   }
 
 }
+export async function getCurrentUser() {
+    try {
+        const { data } = await api.get("/api/auth/me");
+
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("role", data.role);
+
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch current user:", error);
+        throw error;
+    }
+}

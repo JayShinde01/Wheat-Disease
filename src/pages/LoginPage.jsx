@@ -17,7 +17,7 @@ import {
   LockOutlined,
 } from "@ant-design/icons";
 
-import { googleLogin, login, preflight } from "../service/authService";
+import { googleLogin, login, preflight, getCurrentUser } from "../service/authService";
 import { Link, useNavigate } from "react-router-dom";
 import ThemeToggle from "../component/ThemeToggle";
 import LanguageSelector from "../component/LanguageSelector";
@@ -36,30 +36,38 @@ function LoginPage() {
   }, []);
 
   const handleSubmit = async (values) => {
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const response = await login(values);
+    await login(values);
 
-      console.log(response);
+    const user = await getCurrentUser();
 
-      message.success(
-        t("auth.loginTitle") || "Login successful"
-      );
+    message.success(
+      t("auth.loginTitle") || "Login successful"
+    );
 
-      navigate("/home");
-    } catch (error) {
-      console.error(error);
-
-      message.error(
-        error?.response?.data?.message ||
-          t("auth.invalidCredentials") ||
-          "Invalid email or password"
-      );
-    } finally {
-      setLoading(false);
+    if (user.role === "ADMIN") {
+      navigate("/admin/dashboard", { replace: true });
+    } else {
+      navigate("/home", { replace: true });
     }
-  };
+
+  } catch (error) {
+    console.error(error);
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
+    message.error(
+      error?.response?.data?.message ||
+        t("auth.invalidCredentials") ||
+        "Invalid email or password"
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div
